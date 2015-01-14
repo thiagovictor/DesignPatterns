@@ -13,7 +13,7 @@ class Text implements ComponenteInterface{
         $this->text = $text;
     }
     
-    public function gerarHtml() {
+    public function render() {
         return $this->text;
     }
     

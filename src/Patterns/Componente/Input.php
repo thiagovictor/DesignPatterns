@@ -10,22 +10,18 @@ class Input implements ComponenteInterface{
     private $type;
     private $value;
     
-    public function __construct($nome, $type, $id = NULL, $value = NULL) {
+    public function __construct($nome, $type, $id = NULL, $value = "") {
         $this->nome = $nome;
         $this->id = $id;
         $this->type = $type;
         $this->value = $value;
     }
-    public function gerarHtml() {
+    public function render() {
         $id = "";
-        $value = "";
         if(NULL != $this->id){
             $id = "id='{$this->id}'";
         }
-        if(NULL != $this->value){
-            $value = "value='{$this->value}'";
-        }
-        return "<input type='{$this->type}' name='{$this->nome}' {$id} {$value} >";
+        return "<input type='{$this->type}' name='{$this->nome}' {$id} value='{$this->value}' >";
     }
     
     public function getNome() {

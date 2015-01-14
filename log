@@ -1,0 +1,13 @@
+[11-Sep-2014 18:19:24 America/Sao_Paulo] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[11-Sep-2014 18:19:24 America/Sao_Paulo] PHP Fatal error:  Unknown: Failed opening required 'public' (include_path='.;C:\php\pear') in Unknown on line 0
+[11-Sep-2014 18:19:28 America/Sao_Paulo] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[11-Sep-2014 18:19:28 America/Sao_Paulo] PHP Fatal error:  Unknown: Failed opening required 'public' (include_path='.;C:\php\pear') in Unknown on line 0
+[11-Sep-2014 18:19:29 America/Sao_Paulo] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[11-Sep-2014 18:19:29 America/Sao_Paulo] PHP Fatal error:  Unknown: Failed opening required 'public' (include_path='.;C:\php\pear') in Unknown on line 0
+[11-Sep-2014 18:19:37 America/Sao_Paulo] PHP Warning:  Unknown: failed to open stream: Permission denied in Unknown on line 0
+[11-Sep-2014 18:19:37 America/Sao_Paulo] PHP Fatal error:  Unknown: Failed opening required 'public' (include_path='.;C:\php\pear') in Unknown on line 0
+[14-Jan-2015 12:53:11 America/Sao_Paulo] PHP Warning:  Missing argument 3 for Patterns\Formulario\Formulario::__construct(), called in C:\php\www\DesignPatterns\public\index.php on line 11 and defined in C:\php\www\DesignPatterns\src\Patterns\Formulario\Formulario.php on line 17
+[14-Jan-2015 12:53:11 America/Sao_Paulo] PHP Notice:  Undefined variable: action in C:\php\www\DesignPatterns\src\Patterns\Formulario\Formulario.php on line 20
+[14-Jan-2015 12:53:11 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Patterns\Componente\Label::gerarHtml() in C:\php\www\DesignPatterns\src\Patterns\Formulario\Formulario.php on line 28
+[14-Jan-2015 12:53:55 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Patterns\Componente\Label::gerarHtml() in C:\php\www\DesignPatterns\src\Patterns\Formulario\Formulario.php on line 28
+[14-Jan-2015 13:04:41 America/Sao_Paulo] PHP Fatal error:  spl_autoload(): Class Patterns\Formulario could not be loaded in C:\php\www\DesignPatterns\public\index.php on line 11

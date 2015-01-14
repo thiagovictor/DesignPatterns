@@ -14,7 +14,7 @@ class Label implements ComponenteInterface{
         $this->nome = $nome;
     }
     
-    public function gerarHtml() {
+    public function render() {
         return "<label for='{$this->for}'>{$this->nome}</label>";
     }
 
