@@ -45,7 +45,7 @@ class Formulario {
         if(NULL != $this->enctype){
             $enctype = "enctype='{$this->enctype}'";
         }
-        return "<form name='{$this->name}' {$id} method='{$this->method}' action='{$this->action}' {$enctype} ><fieldset>";  
+        return "<form name='{$this->name}' {$id} method='{$this->method}' action='{$this->action}' {$enctype} >";  
     }
     
     public function createField(ComponenteInterface $componente) {
@@ -54,7 +54,7 @@ class Formulario {
     }
     
     private function footer() {
-        return "</fieldset></form>";
+        return "</form>";
     }
     
 }
