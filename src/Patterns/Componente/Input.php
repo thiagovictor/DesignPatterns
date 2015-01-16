@@ -10,7 +10,7 @@ class Input implements ComponenteInterface{
     private $type;
     private $value;
     
-    public function __construct($nome, $type, $id = NULL, $value = "") {
+    public function __construct($nome = "", $type = "", $id = NULL, $value = "") {
         $this->nome = $nome;
         $this->id = $id;
         $this->type = $type;

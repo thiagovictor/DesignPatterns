@@ -11,3 +11,33 @@
 [14-Jan-2015 12:53:11 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Patterns\Componente\Label::gerarHtml() in C:\php\www\DesignPatterns\src\Patterns\Formulario\Formulario.php on line 28
 [14-Jan-2015 12:53:55 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Patterns\Componente\Label::gerarHtml() in C:\php\www\DesignPatterns\src\Patterns\Formulario\Formulario.php on line 28
 [14-Jan-2015 13:04:41 America/Sao_Paulo] PHP Fatal error:  spl_autoload(): Class Patterns\Formulario could not be loaded in C:\php\www\DesignPatterns\public\index.php on line 11
+[16-Jan-2015 20:45:38 America/Sao_Paulo] PHP Catchable fatal error:  Argument 1 passed to Patterns\Formulario::__construct() must be an instance of Patterns\Validators\Validator, instance of Patterns\Factory\FieldFactory given, called in C:\php\www\DesignPatterns\public\index.php on line 12 and defined in C:\php\www\DesignPatterns\src\Patterns\Formulario.php on line 20
+[16-Jan-2015 20:46:50 America/Sao_Paulo] PHP Warning:  Missing argument 1 for Patterns\Componente\Label::__construct(), called in C:\php\www\DesignPatterns\src\Patterns\Factory\FieldFactory.php on line 23 and defined in C:\php\www\DesignPatterns\src\Patterns\Componente\Label.php on line 12
+[16-Jan-2015 20:46:50 America/Sao_Paulo] PHP Warning:  Missing argument 2 for Patterns\Componente\Label::__construct(), called in C:\php\www\DesignPatterns\src\Patterns\Factory\FieldFactory.php on line 23 and defined in C:\php\www\DesignPatterns\src\Patterns\Componente\Label.php on line 12
+[16-Jan-2015 20:46:50 America/Sao_Paulo] PHP Notice:  Undefined variable: for in C:\php\www\DesignPatterns\src\Patterns\Componente\Label.php on line 13
+[16-Jan-2015 20:46:50 America/Sao_Paulo] PHP Notice:  Undefined variable: nome in C:\php\www\DesignPatterns\src\Patterns\Componente\Label.php on line 14
+[16-Jan-2015 20:46:50 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'LogicException' with message 'Class LabelNome could not be loaded' in C:\php\www\DesignPatterns\src\Patterns\Factory\FieldFactory.php:32
+Stack trace:
+#0 [internal function]: spl_autoload('LabelNome')
+#1 C:\php\www\DesignPatterns\src\Patterns\Factory\FieldFactory.php(32): method_exists('LabelNome', 'setNome')
+#2 C:\php\www\DesignPatterns\src\Patterns\Formulario.php(53): Patterns\Factory\FieldFactory->createField('label', Array)
+#3 C:\php\www\DesignPatterns\public\index.php(13): Patterns\Formulario->createField('label', Array)
+#4 {main}
+  thrown in C:\php\www\DesignPatterns\src\Patterns\Factory\FieldFactory.php on line 32
+[16-Jan-2015 20:49:11 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'LogicException' with message 'Class LabelNome could not be loaded' in C:\php\www\DesignPatterns\src\Patterns\Factory\FieldFactory.php:32
+Stack trace:
+#0 [internal function]: spl_autoload('LabelNome')
+#1 C:\php\www\DesignPatterns\src\Patterns\Factory\FieldFactory.php(32): method_exists('LabelNome', 'setNome')
+#2 C:\php\www\DesignPatterns\src\Patterns\Formulario.php(53): Patterns\Factory\FieldFactory->createField('label', Array)
+#3 C:\php\www\DesignPatterns\public\index.php(13): Patterns\Formulario->createField('label', Array)
+#4 {main}
+  thrown in C:\php\www\DesignPatterns\src\Patterns\Factory\FieldFactory.php on line 32
+[16-Jan-2015 20:50:42 America/Sao_Paulo] PHP Warning:  Missing argument 1 for Patterns\Componente\Input::__construct(), called in C:\php\www\DesignPatterns\src\Patterns\Factory\FieldFactory.php on line 23 and defined in C:\php\www\DesignPatterns\src\Patterns\Componente\Input.php on line 13
+[16-Jan-2015 20:50:42 America/Sao_Paulo] PHP Warning:  Missing argument 2 for Patterns\Componente\Input::__construct(), called in C:\php\www\DesignPatterns\src\Patterns\Factory\FieldFactory.php on line 23 and defined in C:\php\www\DesignPatterns\src\Patterns\Componente\Input.php on line 13
+[16-Jan-2015 20:50:42 America/Sao_Paulo] PHP Notice:  Undefined variable: nome in C:\php\www\DesignPatterns\src\Patterns\Componente\Input.php on line 14
+[16-Jan-2015 20:50:42 America/Sao_Paulo] PHP Notice:  Undefined variable: type in C:\php\www\DesignPatterns\src\Patterns\Componente\Input.php on line 16
+[16-Jan-2015 20:54:28 America/Sao_Paulo] PHP Notice:  Undefined property: Patterns\Componente\Label::$nome in C:\php\www\DesignPatterns\src\Patterns\Componente\Label.php on line 18
+[16-Jan-2015 21:04:38 America/Sao_Paulo] PHP Warning:  Missing argument 1 for Patterns\Componente\Text::__construct(), called in C:\php\www\DesignPatterns\src\Patterns\Factory\FieldFactory.php on line 23 and defined in C:\php\www\DesignPatterns\src\Patterns\Componente\Text.php on line 11
+[16-Jan-2015 21:04:38 America/Sao_Paulo] PHP Notice:  Undefined variable: text in C:\php\www\DesignPatterns\src\Patterns\Componente\Text.php on line 12
+[16-Jan-2015 21:04:38 America/Sao_Paulo] PHP Warning:  Missing argument 1 for Patterns\Componente\Text::__construct(), called in C:\php\www\DesignPatterns\src\Patterns\Factory\FieldFactory.php on line 23 and defined in C:\php\www\DesignPatterns\src\Patterns\Componente\Text.php on line 11
+[16-Jan-2015 21:04:38 America/Sao_Paulo] PHP Notice:  Undefined variable: text in C:\php\www\DesignPatterns\src\Patterns\Componente\Text.php on line 12

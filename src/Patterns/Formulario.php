@@ -3,9 +3,8 @@
 
 namespace Patterns;
 
-use Patterns\Interfaces\ComponenteInterface;
-use Patterns\Validators;
-use Patterns;
+use Patterns\Factory\FieldFactory;
+use Patterns\Validators\Validator;
 
 class Formulario {
     
@@ -16,14 +15,16 @@ class Formulario {
     private $id;
     private $enctype;
     private $validador;
+    private $factory;
     
-    public function __construct(Validators\Validator $validador, $name, $method, $action, $id = NULL, $enctype = NULL) {
+    public function __construct(Validator $validador,  FieldFactory $factory,  $name, $method, $action, $id = NULL, $enctype = NULL) {
         $this->name = $name;
         $this->method = $method;
         $this->action = $action;
         $this->id = $id;
         $this->enctype = $enctype;
         $this->validador = $validador;
+        $this->factory = $factory;
     }
     
     public function render() {
@@ -48,8 +49,10 @@ class Formulario {
         return "<form name='{$this->name}' {$id} method='{$this->method}' action='{$this->action}' {$enctype} >";  
     }
     
-    public function createField(ComponenteInterface $componente) {
-        $this->componentes[] = $componente;
+    public function createField($tipo , array $parametros = array()) {
+        if($this->factory->createField($tipo, $parametros)){
+            $this->componentes[] = $this->factory->getField();
+        }
         return $this;
     }
     
