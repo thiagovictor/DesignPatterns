@@ -17,7 +17,7 @@ class Formulario {
     private $validador;
     private $factory;
     
-    public function __construct(Validator $validador,  FieldFactory $factory,  $name, $method, $action, $id = NULL, $enctype = NULL) {
+    public function __construct(Validator $validador,  FieldFactory $factory,  $name = "", $method = "", $action= "", $id = NULL, $enctype = NULL) {
         $this->name = $name;
         $this->method = $method;
         $this->action = $action;
@@ -59,5 +59,29 @@ class Formulario {
     private function footer() {
         return "</form>";
     }
+    public function setName($name) {
+        $this->name = $name;
+        return $this;
+    }
+
+    public function setMethod($method) {
+        $this->method = $method;
+        return $this;
+    }
+
+    public function setAction($action) {
+        $this->action = $action;
+        return $this;
+    }
     
+    public function reset() {
+        $this->name = "";
+        $this->method = "";
+        $this->action = "";
+        $this->id = NULL;
+        $this->enctype = NULL;
+        return $this;
+    }
+
+
 }

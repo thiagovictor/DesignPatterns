@@ -41,3 +41,40 @@ Stack trace:
 [16-Jan-2015 21:04:38 America/Sao_Paulo] PHP Notice:  Undefined variable: text in C:\php\www\DesignPatterns\src\Patterns\Componente\Text.php on line 12
 [16-Jan-2015 21:04:38 America/Sao_Paulo] PHP Warning:  Missing argument 1 for Patterns\Componente\Text::__construct(), called in C:\php\www\DesignPatterns\src\Patterns\Factory\FieldFactory.php on line 23 and defined in C:\php\www\DesignPatterns\src\Patterns\Componente\Text.php on line 11
 [16-Jan-2015 21:04:38 America/Sao_Paulo] PHP Notice:  Undefined variable: text in C:\php\www\DesignPatterns\src\Patterns\Componente\Text.php on line 12
+[20-Jan-2015 14:33:26 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Aura\Di\Lazy::setName() in C:\php\www\DesignPatterns\public\index.php on line 16
+[20-Jan-2015 14:36:01 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'LogicException' with message 'Class Formulario could not be loaded' in C:\php\www\DesignPatterns\src\Aura\Di\Config.php:168
+Stack trace:
+#0 [internal function]: spl_autoload('Formulario')
+#1 C:\php\www\DesignPatterns\src\Aura\Di\Config.php(168): get_parent_class('Formulario')
+#2 C:\php\www\DesignPatterns\src\Aura\Di\Forge.php(93): Aura\Di\Config->fetch('Formulario')
+#3 C:\php\www\DesignPatterns\src\Aura\Di\Container.php(348): Aura\Di\Forge->newInstance('Formulario', Array, Array)
+#4 C:\php\www\DesignPatterns\public\index.php(16): Aura\Di\Container->newInstance('Formulario')
+#5 {main}
+  thrown in C:\php\www\DesignPatterns\src\Aura\Di\Config.php on line 168
+[03-Feb-2015 19:42:13 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'LogicException' with message 'Class Formulario could not be loaded' in C:\php\www\DesignPatterns\src\Aura\Di\Config.php:168
+Stack trace:
+#0 [internal function]: spl_autoload('Formulario')
+#1 C:\php\www\DesignPatterns\src\Aura\Di\Config.php(168): get_parent_class('Formulario')
+#2 C:\php\www\DesignPatterns\src\Aura\Di\Forge.php(93): Aura\Di\Config->fetch('Formulario')
+#3 C:\php\www\DesignPatterns\src\Aura\Di\Container.php(348): Aura\Di\Forge->newInstance('Formulario', Array, Array)
+#4 C:\php\www\DesignPatterns\public\index.php(16): Aura\Di\Container->newInstance('Formulario')
+#5 {main}
+  thrown in C:\php\www\DesignPatterns\src\Aura\Di\Config.php on line 168
+[03-Feb-2015 20:10:57 America/Sao_Paulo] PHP Notice:  Undefined variable: form in C:\php\www\DesignPatterns\public\index.php on line 16
+[03-Feb-2015 20:10:57 America/Sao_Paulo] PHP Fatal error:  Cannot access empty property in C:\php\www\DesignPatterns\public\index.php on line 16
+[03-Feb-2015 20:19:04 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'UnexpectedValueException' with message 'Formulario' in C:\php\www\DesignPatterns\src\Aura\Di\Container.php:118
+Stack trace:
+#0 C:\php\www\DesignPatterns\public\index.php(15): Aura\Di\Container->__get('Formulario')
+#1 {main}
+  thrown in C:\php\www\DesignPatterns\src\Aura\Di\Container.php on line 118
+[03-Feb-2015 20:28:21 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'LogicException' with message 'Class FieldFactory could not be loaded' in C:\php\www\DesignPatterns\src\Aura\Di\Config.php:168
+Stack trace:
+#0 [internal function]: spl_autoload('FieldFactory')
+#1 C:\php\www\DesignPatterns\src\Aura\Di\Config.php(168): get_parent_class('FieldFactory')
+#2 C:\php\www\DesignPatterns\src\Aura\Di\Forge.php(93): Aura\Di\Config->fetch('FieldFactory')
+#3 C:\php\www\DesignPatterns\src\Aura\Di\Container.php(378): Aura\Di\Forge->newInstance('FieldFactory', Array, Array)
+#4 C:\php\www\DesignPatterns\src\Aura\Di\Lazy.php(55): Aura\Di\Container->Aura\Di\{closure}()
+#5 C:\php\www\DesignPatterns\src\Aura\Di\Container.php(250): Aura\Di\Lazy->__invoke()
+#6 C:\php\www\DesignPatterns\public\index.php(15): Aura\Di\Container->get('Formulario')
+#7 {main}
+  thrown in C:\php\www\DesignPatterns\src\Aura\Di\Config.php on line 168
