@@ -15,13 +15,15 @@ $form3 = clone $form;
 
         $form->reset()->setName("Form")
         ->setMethod("POST")
+        ->createField("fieldset", array("Tag" => "open", "Legenda"=>"Primeiro Formulario"))
         ->createField("label", array("label" => "Email :", "for" => "email"))
         ->createField("input", array("nome" => "email", "type" => "text", "id" => "idemail"))
         ->createField("quebra")
         ->createField("label", array("label" => "Senha :", "for" => "senha"))
         ->createField("input", array("nome" => "senha", "type" => "password", "id" => "idpassword"))
         ->createField("quebra")
-        ->createField("input", array("nome" => "Autenticar", "type" => "submit", "value" => "Entrar"));
+        ->createField("input", array("nome" => "Autenticar", "type" => "submit", "value" => "Entrar"))
+        ->createField("fieldset", array("Tag" => "close"));
         
         
         $form1->reset()->setName("Form1")
