@@ -18,7 +18,7 @@ class Fieldset implements ComponenteInterface {
         switch ($this->tag){
         case "open": 
             echo "<fieldset>";
-            if(!$this->legenda){
+            if(!$this->legenda == NULL){
                 echo "<legend>{$this->legenda}</legend>";
             }
             break;
