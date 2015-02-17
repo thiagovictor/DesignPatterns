@@ -14,14 +14,23 @@ class Fieldset implements ComponenteInterface {
     }
 
     public function render() {
-        echo "<fieldset>";
-        if (!$this->legenda == NULL) {
-            echo "<legend>{$this->legenda}</legend>";
+        if($this->componentesVazio()){
+            echo "<fieldset>";
+            if (!$this->legenda == NULL) {
+                echo "<legend>{$this->legenda}</legend>";
+            }
+            foreach ($this->componentes as $componente) {
+                echo $componente->render();
+            }
+            echo "</fieldset>";
         }
-        foreach ($this->componentes as $componente) {
-            echo $componente->render();
+    }
+    
+    private function componentesVazio() {
+        if(null == $this->componentes or sizeof($this->componentes) < 1){
+            return false;
         }
-        echo "</fieldset>";
+        return true;
     }
 
     public function setLegenda($legenda) {
