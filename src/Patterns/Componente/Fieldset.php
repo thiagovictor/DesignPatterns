@@ -7,40 +7,30 @@ use Patterns\Interfaces\ComponenteInterface;
 class Fieldset implements ComponenteInterface {
 
     private $legenda;
-    private $tag;
+    private $componentes;
 
-    public function __construct($tag = "", $legenda = NULL) {
+    public function __construct($legenda = NULL) {
         $this->legenda = $legenda;
-        $this->tag = $tag;
     }
 
     public function render() {
-        switch ($this->tag){
-        case "open": 
-            echo "<fieldset>";
-            if(!$this->legenda == NULL){
-                echo "<legend>{$this->legenda}</legend>";
-            }
-            break;
-        case "close" :
-            echo "</fieldset>";
-            break;
-        default :
-            
-        } 
+        echo "<fieldset>";
+        if (!$this->legenda == NULL) {
+            echo "<legend>{$this->legenda}</legend>";
+        }
+        foreach ($this->componentes as $componente) {
+            echo $componente->render();
+        }
+        echo "</fieldset>";
     }
-    
+
     public function setLegenda($legenda) {
         $this->legenda = $legenda;
         return $this;
     }
 
-    public function setTag($tag) {
-        $this->tag = $tag;
-        return $this;
+    public function setField(ComponenteInterface $componente) {
+        $this->componentes[] = $componente;
     }
-
-
-    
 
 }

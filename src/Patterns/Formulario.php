@@ -1,13 +1,12 @@
 <?php
 
-
 namespace Patterns;
 
 use Patterns\Factory\FieldFactory;
 use Patterns\Validators\Validator;
 
 class Formulario {
-    
+
     private $componentes;
     private $name;
     private $method;
@@ -16,8 +15,9 @@ class Formulario {
     private $enctype;
     private $validador;
     private $factory;
-    
-    public function __construct(Validator $validador,  FieldFactory $factory,  $name = "", $method = "", $action= "", $id = NULL, $enctype = NULL) {
+    private $fieldset;
+
+    public function __construct(Validator $validador, FieldFactory $factory, $name = "", $method = "", $action = "", $id = NULL, $enctype = NULL) {
         $this->name = $name;
         $this->method = $method;
         $this->action = $action;
@@ -25,40 +25,45 @@ class Formulario {
         $this->enctype = $enctype;
         $this->validador = $validador;
         $this->factory = $factory;
+        $this->fieldset = null;
     }
-    
+
     public function render() {
+        $this->fieldsetMerge();
         echo $this->head();
         foreach ($this->componentes as $componente) {
             echo $componente->render();
         }
         echo $this->footer();
     }
-    
-    private function head(){
+
+    private function head() {
         $id = "";
         $enctype = "";
-        
-        if(NULL != $this->id){
+
+        if (NULL != $this->id) {
             $id = "id='{$this->id}'";
         }
-      
-        if(NULL != $this->enctype){
+
+        if (NULL != $this->enctype) {
             $enctype = "enctype='{$this->enctype}'";
         }
-        return "<form name='{$this->name}' {$id} method='{$this->method}' action='{$this->action}' {$enctype} >";  
+        return "<form name='{$this->name}' {$id} method='{$this->method}' action='{$this->action}' {$enctype} >";
     }
-    
-    public function createField($tipo , array $parametros = array()) {
-        if($this->factory->createField($tipo, $parametros)){
-            $this->componentes[] = $this->factory->getField();
-        }
-        return $this;
+
+    public function createField($tipo, array $parametros = array()) {
+        $this->factory->createField($tipo, $parametros);
+        return $this->store();
     }
-    
+
+    private function getFieldsetActivated() {
+        return end($this->fieldset);
+    }
+
     private function footer() {
         return "</form>";
     }
+
     public function setName($name) {
         $this->name = $name;
         return $this;
@@ -73,7 +78,7 @@ class Formulario {
         $this->action = $action;
         return $this;
     }
-    
+
     public function reset() {
         $this->name = "";
         $this->method = "";
@@ -83,5 +88,30 @@ class Formulario {
         return $this;
     }
 
+    public function store() {
+        $field = $this->factory->getField();
+        if ($field instanceof Componente\Fieldset) {
+            return $this->fieldset[] = $field;
+        }
+        if (null == $this->fieldset) {
+            return $this->componentes[] = $field;
+        }
+        return $this->getFieldsetActivated()->setField($field);
+    }
 
+    private function fieldsetMerge() {
+        if (!null == $this->fieldset) {
+            $this->componentes[] = $this->fieldset[0];
+            $this->fieldset = null;
+        }
+    }
+
+    public function fieldSetClose() {
+        if (sizeof($this->fieldset) > 1) {
+            $field = $this->getFieldsetActivated();
+            unset($this->fieldset[sizeof($this->fieldset) - 1]);
+            return $this->getFieldsetActivated()->setField($field);
+        }
+        $this->fieldsetMerge();
+    }
 }
