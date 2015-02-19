@@ -16,7 +16,7 @@ $form->setName("Form")
         ->setMethod("POST")
         ->setValidador(new NumericValidador("valor"))
         ->setValidador(new IsBlankValidador("nome"))
-        ->setValidador(new LimitCaracterValidador("descricao", 10));
+        ->setValidador(new LimitCaracterValidador("descricao", 200));
 $form->createField("fieldset", array("Legenda" => "Cadastro de Produtos"));
 $form->createField("label", array("label" => "Nome :", "for" => "nome"));
 $form->createField("input", array("name" => "nome", "type" => "text", "id" => "idnome"));
