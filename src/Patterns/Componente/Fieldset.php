@@ -2,7 +2,9 @@
 
 namespace Patterns\Componente;
 
-use Patterns\Interfaces\ComponenteInterface;
+use Patterns\Interfaces\ComponenteInterface,
+    Patterns\Interfaces\ComponentePopulate;
+use Patterns\Componente\Fieldset;
 
 class Fieldset implements ComponenteInterface {
 
@@ -14,7 +16,7 @@ class Fieldset implements ComponenteInterface {
     }
 
     public function render() {
-        if($this->componentesVazio()){
+        if ($this->componentesVazio()) {
             echo "<fieldset>";
             if (!$this->legenda == NULL) {
                 echo "<legend>{$this->legenda}</legend>";
@@ -25,9 +27,9 @@ class Fieldset implements ComponenteInterface {
             echo "</fieldset>";
         }
     }
-    
+
     private function componentesVazio() {
-        if(null == $this->componentes or sizeof($this->componentes) < 1){
+        if (null == $this->componentes or sizeof($this->componentes) < 1) {
             return false;
         }
         return true;
@@ -40,6 +42,25 @@ class Fieldset implements ComponenteInterface {
 
     public function setField(ComponenteInterface $componente) {
         $this->componentes[] = $componente;
+    }
+
+    public function setComponenteValueByName($name, $value, $mensagem) {
+        foreach ($this->componentes as $componente) {
+            if ($componente instanceof Fieldset) {
+                if ($componente->setComponenteValueByName($name, $value, $mensagem)) {
+                    return true;
+                }
+            }
+            if (!$componente instanceof ComponentePopulate) {
+                continue;
+            }     
+            if ($name === $componente->getName()) {
+                $componente->setValue($value);
+                $componente->setErro($mensagem);
+                return true;
+            }
+        }
+        return false;
     }
 
 }

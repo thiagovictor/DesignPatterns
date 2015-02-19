@@ -3,7 +3,6 @@
 namespace Patterns;
 
 use Patterns\Factory\FieldFactory;
-use Patterns\Validators\Validator;
 
 class Formulario {
 
@@ -13,17 +12,16 @@ class Formulario {
     private $action;
     private $id;
     private $enctype;
-    private $validador;
+    private $validadores;
     private $factory;
     private $fieldset;
 
-    public function __construct(Validator $validador, FieldFactory $factory, $name = "", $method = "", $action = "", $id = NULL, $enctype = NULL) {
+    public function __construct(FieldFactory $factory, $name = "", $method = "", $action = "", $id = NULL, $enctype = NULL) {
         $this->name = $name;
         $this->method = $method;
         $this->action = $action;
         $this->id = $id;
         $this->enctype = $enctype;
-        $this->validador = $validador;
         $this->factory = $factory;
         $this->fieldset = null;
     }
@@ -88,6 +86,20 @@ class Formulario {
         return $this;
     }
 
+    public function setValidador(Interfaces\ValidadorInterface $validador) {
+        $this->validadores[] = $validador;
+        return $this;
+    }
+    
+    public function getValidador($for) {
+        foreach ($this->validadores as $validador) {
+            if($validador->getFor() === $for ){
+                return $validador;
+            }
+        }
+        return new Validators\ObjectNullValidador("");
+    }
+
     public function store() {
         $field = $this->factory->getField();
         if ($field instanceof Componente\Fieldset) {
@@ -114,4 +126,34 @@ class Formulario {
         }
         $this->fieldsetMerge();
     }
+
+    private function setComponenteValueByName($name, $value) {
+        $mensagem = $this->getValidador($name)->isValid($value);
+        foreach ($this->componentes as $componente) {
+
+            if ($componente instanceof Componente\Fieldset) {
+                if ($componente->setComponenteValueByName($name, $value ,$mensagem)) {
+                    return true;
+                }
+            }
+
+            if (!$componente instanceof Interfaces\ComponentePopulate) {
+                continue;
+            }
+
+            if ($name === $componente->getName()) {
+                $componente->setValue($value);
+                $componente->setErro($mensagem);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function popular($data) {
+        foreach ($data as $key => $value) {
+          $this->setComponenteValueByName($key, $value);
+        }
+    }
+
 }
