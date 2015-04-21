@@ -16,7 +16,7 @@ class ObjectNullValidador implements ValidadorInterface {
     public function getFor(){
         return $this->for;
     }
-
+    
     public function getMessageError() {
         return "";
     }
