@@ -126,9 +126,16 @@ class Formulario {
         }
         $this->fieldsetMerge();
     }
-
+    
+    private function verificarMensagemValidacao($name,$value) {
+        if($this->getValidador($name)->isValid($value)){
+            return "";
+        }
+        return $this->getValidador($name)->getMessageError();
+    }
+    
     private function setComponenteValueByName($name, $value) {
-        $mensagem = $this->getValidador($name)->isValid($value);
+        $mensagem = $this->verificarMensagemValidacao($name, $value);
         foreach ($this->componentes as $componente) {
 
             if ($componente instanceof Componente\Fieldset) {

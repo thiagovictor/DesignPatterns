@@ -11,10 +11,14 @@ class ObjectNullValidador implements ValidadorInterface {
         $this->for = $for;
     }
     public function isValid($data){
-        $data = "";
-        return "";
+        return true;
     }
     public function getFor(){
         return $this->for;
     }
+
+    public function getMessageError() {
+        return "";
+    }
+
 }

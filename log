@@ -78,3 +78,4 @@ Stack trace:
 #6 C:\php\www\DesignPatterns\public\index.php(15): Aura\Di\Container->get('Formulario')
 #7 {main}
   thrown in C:\php\www\DesignPatterns\src\Aura\Di\Config.php on line 168
+[09-Mar-2015 14:34:28 America/Sao_Paulo] PHP Fatal error:  Call to undefined function Patterns\Validators\assertEquals() in C:\php\www\DesignPatterns\test\src\Patterns\Validators\IsBlankValidadorTest.php on line 8

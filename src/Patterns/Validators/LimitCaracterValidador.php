@@ -7,6 +7,7 @@ use Patterns\Interfaces\ValidadorInterface;
 class LimitCaracterValidador implements ValidadorInterface {
     private $for;
     private $limit;
+    private $message;
     
     public function __construct($for, $limit) {
         $this->for = $for;
@@ -14,11 +15,18 @@ class LimitCaracterValidador implements ValidadorInterface {
     }
     public function isValid($data){
         if(strlen($data) > $this->limit ){
-            return "Este campo excedeu o Limite permitido: max. {$this->limit} caracteres.";
+            $this->message = "Este campo excedeu o Limite permitido: max. {$this->limit} caracteres.";
+            return false;
         }
-        return "";
+       $this->message = "";
+       return true;
     }
     public function getFor(){
         return $this->for;
     }
+
+    public function getMessageError() {
+        return $this->message;
+    }
+
 }
