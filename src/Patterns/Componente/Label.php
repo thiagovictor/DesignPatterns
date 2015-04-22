@@ -27,5 +27,12 @@ class Label implements ComponenteInterface {
         $this->label = $label;
         return $this;
     }
+    public function getFor() {
+        return $this->for;
+    }
+
+    public function getLabel() {
+        return $this->label;
+    }
 
 }
