@@ -29,4 +29,17 @@ class FormularioTest extends \PHPUnit_Framework_TestCase {
         $componente->setMethod("POST");
         $this->assertEquals("POST", $componente->getMethod());
     }
+    
+    public function testVerificaCriacaoDeField() {
+        $formulario = new Formulario(new Factory\FieldFactory());
+        $formulario->createField("fieldset", array("Legenda" => "Cadastro de Produtos"));
+        $componente = $formulario->createField("label", array("label" => "Nome :", "for" => "nome"));
+        $this->assertInstanceOf("Patterns\Interfaces\ComponenteInterface",$componente);
+        $valor = "";
+        if(method_exists($componente, "getFor")){
+            $valor = $componente->getFor();
+        }
+        $this->assertEquals("nome", $valor);
+        
+    }
 }

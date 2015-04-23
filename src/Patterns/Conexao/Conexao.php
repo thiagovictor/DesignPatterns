@@ -18,21 +18,4 @@ class Conexao {
         }
         return $data;
     }
-
-    /* unlink('empresa.db');
-      $db = new SQLite3('empresa.db');
-
-      $db->exec('CREATE TABLE cartegoria (id INTEGER AUTO_INCREMENT, descricao STRING)');
-      $db->exec("INSERT INTO cartegoria (descricao) VALUES ('Limpeza')");
-      $db->exec("INSERT INTO cartegoria (descricao) VALUES ('Higiene')");
-      $db->exec("INSERT INTO cartegoria (descricao) VALUES ('Perfumaria')");
-
-      $results = $db->query('SELECT descricao FROM cartegoria');
-      while ($row = $results->fetchArray()) {
-      foreach($row as $chave => $valor){
-      if($chave == "cartegoria"){
-      echo $valor;
-      }
-      }
-      } */
 }

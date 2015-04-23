@@ -42,6 +42,7 @@ class Fieldset implements ComponenteInterface {
 
     public function setField(ComponenteInterface $componente) {
         $this->componentes[] = $componente;
+        //return $componente;
     }
 
     public function setComponenteValueByName($name, $value, $mensagem) {
