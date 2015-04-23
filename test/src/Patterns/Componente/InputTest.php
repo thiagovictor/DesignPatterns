@@ -24,4 +24,7 @@ class InputTest extends \PHPUnit_Framework_TestCase{
         $componente->setValue("Thiago Santos");
         $this->assertEquals("Thiago Santos", $componente->getValue());
     }
+    public function testVerificaSeOComponenteEUmaClassseDoTipoComponenteInterface() {
+        $this->assertInstanceOf("Patterns\Interfaces\ComponenteInterface",new Input());        
+    }
 }

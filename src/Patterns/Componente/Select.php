@@ -46,6 +46,10 @@ class Select implements ComponenteInterface, ComponentePopulate {
         return $this->options;
     }
     
+    public function getDefaut() {
+        return $this->defaut;
+    }
+    
     public function setDefault($id) {
         $this->defaut = [$id => $this->options[$id]];
         unset($this->options[$id]);

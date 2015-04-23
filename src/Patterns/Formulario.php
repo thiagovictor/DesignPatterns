@@ -76,8 +76,34 @@ class Formulario {
         $this->action = $action;
         return $this;
     }
+    public function getName() {
+        return $this->name;
+    }
 
-    public function reset() {
+    public function getMethod() {
+        return $this->method;
+    }
+
+    public function getAction() {
+        return $this->action;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function getEnctype() {
+        return $this->enctype;
+    }
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function setEnctype($enctype) {
+        $this->enctype = $enctype;
+    }
+
+        public function reset() {
         $this->name = "";
         $this->method = "";
         $this->action = "";

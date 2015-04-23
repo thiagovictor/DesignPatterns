@@ -14,4 +14,7 @@ class LabelTest extends \PHPUnit_Framework_TestCase{
         $componente->setLabel("Nome");
         $this->assertEquals("Nome", $componente->getLabel());
     }
+    public function testVerificaSeOComponenteEUmaClassseDoTipoComponenteInterface() {
+        $this->assertInstanceOf("Patterns\Interfaces\ComponenteInterface",new Label());        
+    }
 }

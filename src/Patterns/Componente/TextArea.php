@@ -42,8 +42,12 @@ class TextArea implements ComponenteInterface, ComponentePopulate {
     public function setValue($value) {
         $this->texto = $value;
     }
+    
+    public function getTexto() {
+        return $this->texto;
+    }
 
-    public function setErro($mensagem) {
+        public function setErro($mensagem) {
         $this->mensagem = $mensagem;
     }
 

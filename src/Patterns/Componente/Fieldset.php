@@ -62,5 +62,10 @@ class Fieldset implements ComponenteInterface {
         }
         return false;
     }
+    
+    public function getLegenda() {
+        return $this->legenda;
+    }
+
 
 }

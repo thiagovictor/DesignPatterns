@@ -20,5 +20,8 @@ class Text implements ComponenteInterface {
         $this->text = $text;
         return $this;
     }
-
+    
+    public function getText() {
+        return $this->text;
+    }
 }
