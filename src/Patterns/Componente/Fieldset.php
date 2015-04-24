@@ -42,7 +42,7 @@ class Fieldset implements ComponenteInterface {
 
     public function setField(ComponenteInterface $componente) {
         $this->componentes[] = $componente;
-        //return $componente;
+        return $componente;
     }
 
     public function setComponenteValueByName($name, $value, $mensagem) {
@@ -54,7 +54,7 @@ class Fieldset implements ComponenteInterface {
             }
             if (!$componente instanceof ComponentePopulate) {
                 continue;
-            }     
+            }
             if ($name === $componente->getName()) {
                 $componente->setValue($value);
                 $componente->setErro($mensagem);
@@ -63,10 +63,21 @@ class Fieldset implements ComponenteInterface {
         }
         return false;
     }
-    
+
+    private function getComponenteByName($name) {
+        foreach ($this->componentes as $componente) {
+            if ($componente instanceof Fieldset) {
+                return $componente->getComponenteByName($name);
+            }
+            if ($name === $componente->getName()) {
+                return $componente;
+            }
+        }
+        return false;
+    }
+
     public function getLegenda() {
         return $this->legenda;
     }
-
 
 }

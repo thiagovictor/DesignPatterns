@@ -54,6 +54,17 @@ class Formulario {
         return $this->store();
     }
 
+    public function store() {
+        $field = $this->factory->getField();
+        if ($field instanceof Componente\Fieldset) {
+            return $this->fieldset[] = $field;
+        }
+        if (null == $this->fieldset) {
+            return $this->componentes[] = $field;
+        }
+        return $this->getFieldsetActivated()->setField($field);
+    }
+
     private function getFieldsetActivated() {
         return end($this->fieldset);
     }
@@ -76,6 +87,7 @@ class Formulario {
         $this->action = $action;
         return $this;
     }
+
     public function getName() {
         return $this->name;
     }
@@ -95,6 +107,7 @@ class Formulario {
     public function getEnctype() {
         return $this->enctype;
     }
+
     public function setId($id) {
         $this->id = $id;
     }
@@ -103,7 +116,7 @@ class Formulario {
         $this->enctype = $enctype;
     }
 
-        public function reset() {
+    public function reset() {
         $this->name = "";
         $this->method = "";
         $this->action = "";
@@ -116,25 +129,14 @@ class Formulario {
         $this->validadores[] = $validador;
         return $this;
     }
-    
+
     public function getValidador($for) {
         foreach ($this->validadores as $validador) {
-            if($validador->getFor() === $for ){
+            if ($validador->getFor() === $for) {
                 return $validador;
             }
         }
         return new Validators\ObjectNullValidador("");
-    }
-
-    public function store() {
-        $field = $this->factory->getField();
-        if ($field instanceof Componente\Fieldset) {
-            return $this->fieldset[] = $field;
-        }
-        if (null == $this->fieldset) {
-            return $this->componentes[] = $field;
-        }
-        return $this->getFieldsetActivated()->setField($field);
     }
 
     private function fieldsetMerge() {
@@ -152,20 +154,20 @@ class Formulario {
         }
         $this->fieldsetMerge();
     }
-    
-    private function verificarMensagemValidacao($name,$value) {
-        if($this->getValidador($name)->isValid($value)){
+
+    private function verificarMensagemValidacao($name, $value) {
+        if ($this->getValidador($name)->isValid($value)) {
             return "";
         }
         return $this->getValidador($name)->getMessageError();
     }
-    
+
     private function setComponenteValueByName($name, $value) {
         $mensagem = $this->verificarMensagemValidacao($name, $value);
         foreach ($this->componentes as $componente) {
 
             if ($componente instanceof Componente\Fieldset) {
-                if ($componente->setComponenteValueByName($name, $value ,$mensagem)) {
+                if ($componente->setComponenteValueByName($name, $value, $mensagem)) {
                     return true;
                 }
             }
@@ -183,9 +185,22 @@ class Formulario {
         return false;
     }
 
+    public function getComponenteByName($name) {
+
+        foreach ($this->componentes as $componente) {
+            if ($componente instanceof Componente\Fieldset) {
+                return $componente->getComponenteByName($name);
+            }
+            if ($name === $componente->getName()) {
+                return $componente;
+            }
+        }
+        return false;
+    }
+
     public function popular($data) {
         foreach ($data as $key => $value) {
-          $this->setComponenteValueByName($key, $value);
+            $this->setComponenteValueByName($key, $value);
         }
     }
 
