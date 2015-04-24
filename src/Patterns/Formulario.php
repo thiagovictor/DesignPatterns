@@ -131,9 +131,11 @@ class Formulario {
     }
 
     public function getValidador($for) {
-        foreach ($this->validadores as $validador) {
-            if ($validador->getFor() === $for) {
-                return $validador;
+        if (!is_null($this->validadores)) {
+            foreach ($this->validadores as $validador) {
+                if ($validador->getFor() === $for) {
+                    return $validador;
+                }
             }
         }
         return new Validators\ObjectNullValidador("");
