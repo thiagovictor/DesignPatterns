@@ -14,7 +14,8 @@ class FieldFactory {
         "fieldset" => "Patterns\Componente\Fieldset",
         "quebra" => "Patterns\Componente\Quebra",
         "textArea" => "Patterns\Componente\TextArea",
-        "Select" => "Patterns\Componente\Select"
+        "Select" => "Patterns\Componente\Select",
+        "invalido"=>"Patterns\Request",
     );
 
     public function createField($tipo, array $parametros = array()) {

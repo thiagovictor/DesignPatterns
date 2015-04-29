@@ -13,15 +13,18 @@ class Select implements ComponenteInterface, ComponentePopulate {
     private $defaut;
 
     public function render() {
-
-        echo "<select name='{$this->name}'>";
-            foreach ($this->defaut as $key => $value) {
-                echo "<option value='{$key}'>{$value}</option>";
+        $render = "<select name='{$this->name}'>";
+            if(NULL != $this->defaut){
+                foreach ($this->defaut as $key => $value) {
+                    $render .= "<option value='{$key}'>{$value}</option>";
+                }
             }
-            foreach ($this->options as $key => $value) {
-                echo "<option value='{$key}'>{$value}</option>";
+            if(NULL != $this->options){
+                foreach ($this->options as $key => $value) {
+                    $render .= "<option value='{$key}'>{$value}</option>";
+                }
             }
-        echo "</select>";
+       return $render .= "</select>";
     }
 
     public function setName($nome) {

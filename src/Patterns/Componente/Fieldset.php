@@ -17,18 +17,19 @@ class Fieldset implements ComponenteInterface {
 
     public function render() {
         if ($this->componentesVazio()) {
-            echo "<fieldset>";
+            $render = "<fieldset>";
             if (!$this->legenda == NULL) {
-                echo "<legend>{$this->legenda}</legend>";
+                $render .= "<legend>{$this->legenda}</legend>";
             }
             foreach ($this->componentes as $componente) {
-                echo $componente->render();
+                $render .= $componente->render();
             }
-            echo "</fieldset>";
+            return $render .= "</fieldset>";
         }
+        return "";
     }
 
-    private function componentesVazio() {
+    public function componentesVazio() {
         if (null == $this->componentes or sizeof($this->componentes) < 1) {
             return false;
         }
@@ -55,6 +56,7 @@ class Fieldset implements ComponenteInterface {
             if (!$componente instanceof ComponentePopulate) {
                 continue;
             }
+            
             if ($name === $componente->getName()) {
                 $componente->setValue($value);
                 $componente->setErro($mensagem);
@@ -64,10 +66,13 @@ class Fieldset implements ComponenteInterface {
         return false;
     }
 
-    private function getComponenteByName($name) {
+    public function getComponenteByName($name) {
         foreach ($this->componentes as $componente) {
             if ($componente instanceof Fieldset) {
                 return $componente->getComponenteByName($name);
+            }
+            if (!$componente instanceof ComponentePopulate) {
+                continue;
             }
             if ($name === $componente->getName()) {
                 return $componente;

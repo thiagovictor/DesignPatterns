@@ -193,6 +193,9 @@ class Formulario {
             if ($componente instanceof Componente\Fieldset) {
                 return $componente->getComponenteByName($name);
             }
+            if (!$componente instanceof ComponentePopulate) {
+                continue;
+            }
             if ($name === $componente->getName()) {
                 return $componente;
             }
