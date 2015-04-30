@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for C:\php\www\DesignPatterns\src\Patterns</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/nv.d3.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.min.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="index.html">C:\php\www\DesignPatterns\src\Patterns</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Componente/Select.php.html#8">Select</a></td><td class="text-right">46%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Componente/Select.php.html#8">Select</a></td><td class="text-right">49</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Formulario.php.html#72"><abbr title="Formulario::footer">footer</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Componente/Label.php.html#17"><abbr title="Label::render">render</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validators/IsBlankValidador.php.html#23"><abbr title="IsBlankValidador::getMessageError">getMessageError</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validators/LimitCaracterValidador.php.html#28"><abbr title="LimitCaracterValidador::getMessageError">getMessageError</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Validators/NumericValidador.php.html#26"><abbr title="NumericValidador::getMessageError">getMessageError</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Formulario.php.html#29"><abbr title="Formulario::render">render</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Formulario.php.html#38"><abbr title="Formulario::head">head</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Componente/Select.php.html#65"><abbr title="Select::setErro">setErro</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Componente/TextArea.php.html#18"><abbr title="TextArea::render">render</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Componente/Select.php.html#15"><abbr title="Select::render">render</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Componente/Select.php.html#61"><abbr title="Select::setValue">setValue</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Componente/Text.php.html#15"><abbr title="Text::render">render</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Formulario.php.html#190"><abbr title="Formulario::getComponenteByName">getComponenteByName</a></a></td><td class="text-right">55%</td></tr>
+       <tr><td><a href="Formulario.php.html#167"><abbr title="Formulario::setComponenteValueByName">setComponenteValueByName</a></a></td><td class="text-right">64%</td></tr>
+       <tr><td><a href="Formulario.php.html#160"><abbr title="Formulario::verificarMensagemValidacao">verificarMensagemValidacao</a></a></td><td class="text-right">66%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Componente/Select.php.html#15"><abbr title="Select::render">render</abbr></a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Formulario.php.html#38"><abbr title="Formulario::head">head</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Formulario.php.html#167"><abbr title="Formulario::setComponenteValueByName">setComponenteValueByName</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="Formulario.php.html#190"><abbr title="Formulario::getComponenteByName">getComponenteByName</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="Componente/TextArea.php.html#18"><abbr title="TextArea::render">render</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Formulario.php.html#29"><abbr title="Formulario::render">render</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Formulario.php.html#160"><abbr title="Formulario::verificarMensagemValidacao">verificarMensagemValidacao</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="http://github.com/sebastianbergmann/php-code-coverage" target="_top">PHP_CodeCoverage 2.0.16</a> using <a href="http://php.net/" target="_top">PHP 5.5.11</a> and <a href="http://phpunit.de/">PHPUnit 4.2.6</a> at Thu Apr 30 10:58:24 BRT 2015.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/holder.js" type="text/javascript"></script>
+  <script src="js/d3.min.js" type="text/javascript"></script>
+  <script src="js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([0,0,0,0,0,1,0,0,2,3,3,5], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([12,0,0,0,0,0,1,2,2,0,0,74], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[100,22,"<a href=\"Componente\/Fieldset.php.html#9\">Fieldset<\/a>"],[92.592592592593,13,"<a href=\"Componente\/Input.php.html#8\">Input<\/a>"],[90,6,"<a href=\"Componente\/Label.php.html#7\">Label<\/a>"],[100,1,"<a href=\"Componente\/Quebra.php.html#7\">Quebra<\/a>"],[46.666666666667,15,"<a href=\"Componente\/Select.php.html#8\">Select<\/a>"],[83.333333333333,4,"<a href=\"Componente\/Text.php.html#7\">Text<\/a>"],[76.470588235294,10,"<a href=\"Componente\/TextArea.php.html#8\">TextArea<\/a>"],[100,3,"<a href=\"Conexao\/Conexao.php.html#5\">Conexao<\/a>"],[100,6,"<a href=\"Factory\/FieldFactory.php.html#7\">FieldFactory<\/a>"],[72.380952380952,47,"<a href=\"Formulario.php.html#7\">Formulario<\/a>"],[100,0,"<a href=\"Request.php.html#5\">Request<\/a>"],[88.888888888889,6,"<a href=\"Validators\/IsBlankValidador.php.html#7\">IsBlankValidador<\/a>"],[90,5,"<a href=\"Validators\/LimitCaracterValidador.php.html#7\">LimitCaracterValidador<\/a>"],[88.888888888889,5,"<a href=\"Validators\/NumericValidador.php.html#7\">NumericValidador<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.scatter.onlyCircles(false);
+    chart.tooltipContent(function(key, y, e, graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Componente\/Fieldset.php.html#14\">Fieldset::__construct<\/a>"],[100,4,"<a href=\"Componente\/Fieldset.php.html#18\">Fieldset::render<\/a>"],[100,3,"<a href=\"Componente\/Fieldset.php.html#32\">Fieldset::componentesVazio<\/a>"],[100,1,"<a href=\"Componente\/Fieldset.php.html#39\">Fieldset::setLegenda<\/a>"],[100,1,"<a href=\"Componente\/Fieldset.php.html#44\">Fieldset::setField<\/a>"],[100,6,"<a href=\"Componente\/Fieldset.php.html#49\">Fieldset::setComponenteValueByName<\/a>"],[100,5,"<a href=\"Componente\/Fieldset.php.html#69\">Fieldset::getComponenteByName<\/a>"],[100,1,"<a href=\"Componente\/Fieldset.php.html#84\">Fieldset::getLegenda<\/a>"],[100,1,"<a href=\"Componente\/Input.php.html#16\">Input::__construct<\/a>"],[75,3,"<a href=\"Componente\/Input.php.html#23\">Input::render<\/a>"],[100,1,"<a href=\"Componente\/Input.php.html#34\">Input::getName<\/a>"],[100,1,"<a href=\"Componente\/Input.php.html#38\">Input::getId<\/a>"],[100,1,"<a href=\"Componente\/Input.php.html#42\">Input::getType<\/a>"],[100,1,"<a href=\"Componente\/Input.php.html#46\">Input::getValue<\/a>"],[100,1,"<a href=\"Componente\/Input.php.html#50\">Input::setName<\/a>"],[100,1,"<a href=\"Componente\/Input.php.html#55\">Input::setId<\/a>"],[100,1,"<a href=\"Componente\/Input.php.html#60\">Input::setType<\/a>"],[100,1,"<a href=\"Componente\/Input.php.html#65\">Input::setValue<\/a>"],[100,1,"<a href=\"Componente\/Input.php.html#70\">Input::setErro<\/a>"],[100,1,"<a href=\"Componente\/Label.php.html#12\">Label::__construct<\/a>"],[0,1,"<a href=\"Componente\/Label.php.html#17\">Label::render<\/a>"],[100,1,"<a href=\"Componente\/Label.php.html#21\">Label::setFor<\/a>"],[100,1,"<a href=\"Componente\/Label.php.html#26\">Label::setLabel<\/a>"],[100,1,"<a href=\"Componente\/Label.php.html#30\">Label::getFor<\/a>"],[100,1,"<a href=\"Componente\/Label.php.html#34\">Label::getLabel<\/a>"],[100,1,"<a href=\"Componente\/Quebra.php.html#9\">Quebra::render<\/a>"],[0,5,"<a href=\"Componente\/Select.php.html#15\">Select::render<\/a>"],[100,1,"<a href=\"Componente\/Select.php.html#30\">Select::setName<\/a>"],[100,1,"<a href=\"Componente\/Select.php.html#34\">Select::setOption<\/a>"],[100,2,"<a href=\"Componente\/Select.php.html#38\">Select::setOptions<\/a>"],[100,1,"<a href=\"Componente\/Select.php.html#44\">Select::getName<\/a>"],[100,1,"<a href=\"Componente\/Select.php.html#48\">Select::getValue<\/a>"],[100,1,"<a href=\"Componente\/Select.php.html#52\">Select::getDefaut<\/a>"],[100,1,"<a href=\"Componente\/Select.php.html#56\">Select::setDefault<\/a>"],[0,1,"<a href=\"Componente\/Select.php.html#61\">Select::setValue<\/a>"],[0,1,"<a href=\"Componente\/Select.php.html#65\">Select::setErro<\/a>"],[100,1,"<a href=\"Componente\/Text.php.html#11\">Text::__construct<\/a>"],[0,1,"<a href=\"Componente\/Text.php.html#15\">Text::render<\/a>"],[100,1,"<a href=\"Componente\/Text.php.html#19\">Text::setText<\/a>"],[100,1,"<a href=\"Componente\/Text.php.html#24\">Text::getText<\/a>"],[100,1,"<a href=\"Componente\/TextArea.php.html#14\">TextArea::__construct<\/a>"],[0,2,"<a href=\"Componente\/TextArea.php.html#18\">TextArea::render<\/a>"],[100,1,"<a href=\"Componente\/TextArea.php.html#25\">TextArea::setTexto<\/a>"],[100,1,"<a href=\"Componente\/TextArea.php.html#30\">TextArea::setName<\/a>"],[100,1,"<a href=\"Componente\/TextArea.php.html#34\">TextArea::getName<\/a>"],[100,1,"<a href=\"Componente\/TextArea.php.html#38\">TextArea::getValue<\/a>"],[100,1,"<a href=\"Componente\/TextArea.php.html#42\">TextArea::setValue<\/a>"],[100,1,"<a href=\"Componente\/TextArea.php.html#46\">TextArea::getTexto<\/a>"],[100,1,"<a href=\"Componente\/TextArea.php.html#50\">TextArea::setErro<\/a>"],[100,1,"<a href=\"Conexao\/Conexao.php.html#9\">Conexao::__construct<\/a>"],[100,2,"<a href=\"Conexao\/Conexao.php.html#13\">Conexao::getCategorias<\/a>"],[100,5,"<a href=\"Factory\/FieldFactory.php.html#21\">FieldFactory::createField<\/a>"],[100,1,"<a href=\"Factory\/FieldFactory.php.html#47\">FieldFactory::getField<\/a>"],[100,1,"<a href=\"Formulario.php.html#19\">Formulario::__construct<\/a>"],[0,2,"<a href=\"Formulario.php.html#29\">Formulario::render<\/a>"],[0,3,"<a href=\"Formulario.php.html#38\">Formulario::head<\/a>"],[100,1,"<a href=\"Formulario.php.html#52\">Formulario::createField<\/a>"],[100,3,"<a href=\"Formulario.php.html#57\">Formulario::store<\/a>"],[100,1,"<a href=\"Formulario.php.html#68\">Formulario::getFieldsetActivated<\/a>"],[0,1,"<a href=\"Formulario.php.html#72\">Formulario::footer<\/a>"],[100,1,"<a href=\"Formulario.php.html#76\">Formulario::setName<\/a>"],[100,1,"<a href=\"Formulario.php.html#81\">Formulario::setMethod<\/a>"],[100,1,"<a href=\"Formulario.php.html#86\">Formulario::setAction<\/a>"],[100,1,"<a href=\"Formulario.php.html#91\">Formulario::getName<\/a>"],[100,1,"<a href=\"Formulario.php.html#95\">Formulario::getMethod<\/a>"],[100,1,"<a href=\"Formulario.php.html#99\">Formulario::getAction<\/a>"],[100,1,"<a href=\"Formulario.php.html#103\">Formulario::getId<\/a>"],[100,1,"<a href=\"Formulario.php.html#107\">Formulario::getEnctype<\/a>"],[100,1,"<a href=\"Formulario.php.html#111\">Formulario::setId<\/a>"],[100,1,"<a href=\"Formulario.php.html#115\">Formulario::setEnctype<\/a>"],[100,1,"<a href=\"Formulario.php.html#119\">Formulario::reset<\/a>"],[100,1,"<a href=\"Formulario.php.html#128\">Formulario::setValidador<\/a>"],[71.428571428571,4,"<a href=\"Formulario.php.html#133\">Formulario::getValidador<\/a>"],[100,2,"<a href=\"Formulario.php.html#144\">Formulario::fieldsetMerge<\/a>"],[100,2,"<a href=\"Formulario.php.html#151\">Formulario::fieldSetClose<\/a>"],[66.666666666667,2,"<a href=\"Formulario.php.html#160\">Formulario::verificarMensagemValidacao<\/a>"],[64.285714285714,6,"<a href=\"Formulario.php.html#167\">Formulario::setComponenteValueByName<\/a>"],[55.555555555556,5,"<a href=\"Formulario.php.html#190\">Formulario::getComponenteByName<\/a>"],[100,2,"<a href=\"Formulario.php.html#206\">Formulario::popular<\/a>"],[100,1,"<a href=\"Validators\/IsBlankValidador.php.html#11\">IsBlankValidador::__construct<\/a>"],[100,3,"<a href=\"Validators\/IsBlankValidador.php.html#14\">IsBlankValidador::isValid<\/a>"],[0,1,"<a href=\"Validators\/IsBlankValidador.php.html#23\">IsBlankValidador::getMessageError<\/a>"],[100,1,"<a href=\"Validators\/IsBlankValidador.php.html#26\">IsBlankValidador::getFor<\/a>"],[100,1,"<a href=\"Validators\/LimitCaracterValidador.php.html#12\">LimitCaracterValidador::__construct<\/a>"],[100,2,"<a href=\"Validators\/LimitCaracterValidador.php.html#16\">LimitCaracterValidador::isValid<\/a>"],[100,1,"<a href=\"Validators\/LimitCaracterValidador.php.html#24\">LimitCaracterValidador::getFor<\/a>"],[0,1,"<a href=\"Validators\/LimitCaracterValidador.php.html#28\">LimitCaracterValidador::getMessageError<\/a>"],[100,1,"<a href=\"Validators\/NumericValidador.php.html#11\">NumericValidador::__construct<\/a>"],[100,2,"<a href=\"Validators\/NumericValidador.php.html#14\">NumericValidador::isValid<\/a>"],[100,1,"<a href=\"Validators\/NumericValidador.php.html#22\">NumericValidador::getFor<\/a>"],[0,1,"<a href=\"Validators\/NumericValidador.php.html#26\">NumericValidador::getMessageError<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

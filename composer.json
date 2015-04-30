@@ -2,9 +2,9 @@
 	"config":{
 		"bin-dir": "bin/"
 	}, 
-	"autoload":{
-		"psr-0": {"TestesUnitarios": "src/"}
-	},
+        "autoload" : {
+            "psr-4" : {"Patterns\\" : "src/Patterns/"}
+        },
 	"require":{
 		"phpunit/phpunit": "4.2.6"
 	}	
